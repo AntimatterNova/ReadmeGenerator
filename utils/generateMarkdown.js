@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//This sets up the link for the license badge that displays at the top of the README
 function renderLicenseBadge(license) {
   const badges = {
     MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
@@ -10,8 +9,7 @@ function renderLicenseBadge(license) {
   return badges[license];
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+//This stores the links for the three different license choices
 function renderLicenseLink(license) {
   const licenseLinks = {
     MIT: '[MIT](https://choosealicense.com/licenses/mit/)',
@@ -22,8 +20,7 @@ function renderLicenseLink(license) {
   return licenseLinks[license];
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//This inserts the license paragraph into the generated README file
 function renderLicenseSection(license) {
   if(license){
     return `This project is licensed under the ${renderLicenseLink(license)} license.`
@@ -32,7 +29,7 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+//This function generates the README file based on the input that's passed in by the user
 function genMarkdown(answers) {
   return `
 # ${answers.title}
@@ -68,5 +65,3 @@ ${renderLicenseSection(answers.license)}
 }
 
 module.exports = genMarkdown;
-
-//README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
